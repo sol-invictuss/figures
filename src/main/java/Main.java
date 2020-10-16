@@ -1,5 +1,14 @@
+import factory.AbstractFactory;
+import factory.BlackFactory;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("HEllo world");
+
+        final AbstractFactory abstractFactory = new AbstractFactory(new BlackFactory());
+        abstractFactory
+                .getFactory()
+                .createCircle()
+                .describe();
+
     }
 }
