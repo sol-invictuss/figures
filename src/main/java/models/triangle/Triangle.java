@@ -1,8 +1,12 @@
 package models.triangle;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.lang.*;
 
-
+@Getter
+@Setter
 public abstract class Triangle {
 
     private int baseline, height; // для формулы через основание и высоту
@@ -27,54 +31,6 @@ public abstract class Triangle {
         this.angle_ab = angle_ab;
     }
 
-    public int getBaseline() {
-        return baseline;
-    }
-
-    public void setBaseline(int baseline) {
-        this.baseline = baseline;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getSide_a() {
-        return side_a;
-    }
-
-    public void setSide_a(int side_a) {
-        this.side_a = side_a;
-    }
-
-    public int getSide_b() {
-        return side_b;
-    }
-
-    public void setSide_b(int side_b) {
-        this.side_b = side_b;
-    }
-
-    public int getAngle_ab() {
-        return angle_ab;
-    }
-
-    public void setAngle_ab(int angle_ab) {
-        this.angle_ab = angle_ab;
-    }
-
-    public int getSide_c() {
-        return side_c;
-    }
-
-    public void setSide_c(int side_c) {
-        this.side_c = side_c;
-    }
-
     // через основание и высоту
     public double square(int baseline, int height){
         return 0.5*baseline*height;
@@ -82,7 +38,7 @@ public abstract class Triangle {
 
     // через две стороны и угол между ними
     public double square(int side_a, int side_b, int angle_ab) {
-        return 0.5 * side_a * side_b * Math.sin(angle_ab);
+        return 0.5 * side_a * side_b * Math.sin(angle_ab * Math.PI / 180);
     }
 
     //для формулы Герона (по 3м  сторонам)

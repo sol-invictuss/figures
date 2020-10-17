@@ -1,18 +1,15 @@
 package models.circle;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Circle {
 
     private double radius;
 
     public abstract void describe();
-
-    public double getRadius() {
-        return radius;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
 
     double countSquare() {
         return Math.PI * radius * radius;
