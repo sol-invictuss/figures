@@ -1,5 +1,7 @@
 package models.triangle;
 
+import java.lang.*;
+
 public abstract class Triangle {
 
     private int baseline, height; // для формулы через основание и высоту
